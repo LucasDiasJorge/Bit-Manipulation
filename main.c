@@ -1,37 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-void invert(char* str) {
-    int i = 0;
-    int j = strlen(str) - 1;
-    char temp;
-    while (i < j) {
-        temp = str[i];
-        str[i] = str[j];
-        str[j] = temp;
-        i++;
-        j--;
-    }
-}
 
 int main(int argc, char *argv[]) {
 
-    int num = atoi(argv[1]); // número inteiro para ser convertido em binário
+    int num = atoi(argv[1]);
 
-    char ret[32] = {};
+    int numTwo = atoi(argv[2]);
 
-    for (int i = 31; i >= 0; i--) {   // percorre cada bit do número (32 bits em um int)
-        if ((num >> i) & 1) {     // verifica se o bit na posição atual é 1
-            ret[i] = '1';
-        } else {
-            ret[i] = '0';
-        }
-    }
+    int print = num & numTwo;
+    printf("AND operator: %d & %d = %d\n", num, numTwo, print);
 
-    invert(ret);
+    print = num ^ numTwo;
+    printf("XOR operator: %d ^ %d = %d\n", num, numTwo, print);
 
-    printf("%s",ret);
+    print = ~num;
+    printf("NOT operator (include signal bit): ~%d = %d\n", num, print);
 
     return 0;
 }
