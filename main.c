@@ -1,40 +1,46 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 
-int binToDec(unsigned int bin) {
-    int dec = 0, i = 0;
-    while (bin != 0) {
-        int rem = bin % 10;
-        bin /= 10;
-        dec += rem * pow(2, i);
-        ++i;
+#define MAX_LENGTH 1000
+
+char* encrypt(char* plaintext, int key) {
+
+    int i = 0;
+
+    while (plaintext[i] != '\0') {
+
+        if (plaintext[i] >= 'a' && plaintext[i] <= 'z') {
+
+            plaintext[i] = (plaintext[i] - 'a' + key) % 26 + 'a';
+
+        }
+        
+        if (plaintext[i] >= 'A' && plaintext[i] <= 'Z') {
+
+            plaintext[i] = (plaintext[i] - 'A' + key) % 26 + 'A';
+
+        }
+        i++;
     }
-    return dec;
-}
 
-// Two's complement
-int binToDec2(unsigned int bin, int numBits) {
+    return plaintext;
 
-    unsigned int dec = 0;
-    int signBit = 1 << (numBits - 1);
-
-    if (binToDec(bin) & signBit) { // Signal verify
-        dec = (-~bin - 10000000) * 10;
-        dec = binToDec(dec);
-    }
-    else {
-        dec = binToDec(bin);
-    }
-    return -dec;
 }
 
 int main() {
 
-    unsigned int value = 10101010;
+    char plaintext[MAX_LENGTH];
+    int key;
 
-    printf("Value of 10101010 in decimal is %d\n", binToDec(value));
-    printf("Value of 10101010 in decimal using Two's complement is %d\n", binToDec2(value, 8));
+    printf("Enter plaintext: ");
+    fgets(plaintext, MAX_LENGTH, stdin); // fgets explained (set on plaintext, with max length, from standard input) 
+    
+    printf("Enter key: ");
+    scanf("%d", &key);
+
+    char* ciphertext = encrypt(plaintext, key);
+
+    printf("Ciphertext: %s\n", ciphertext);
 
     return 0;
+
 }
