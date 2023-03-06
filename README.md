@@ -7,3 +7,17 @@ By manipulating bits, it's possible to create and manipulate values that represe
 Moreover, bit manipulation can be used to perform arithmetic operations on bit values, such as shift, rotate, and, or, not, among others. These operations are fundamental in many algorithms for cryptography, data compression, and image and audio processing.
 
 Therefore, bit manipulation is a powerful tool in C for working with low-level data and performing operations that would be difficult or impossible to perform using conventional operations on integer values or other data types.
+
+ ## Projects
+ 
+  - [x] Binare to decimal (Branch main)
+  
+  - [x] Binare with sign (Branch main)
+  
+  - [x] Simplest cryptography (Branch caesar-cypher) 
+  
+  - [ ] Data Compression
+  
+  - [ ] Image processing
+  
+  - [ ] Audio processing 
