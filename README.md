@@ -14,7 +14,7 @@ Therefore, bit manipulation is a powerful tool in C for working with low-level d
   
   _Study reference [main pt 1](https://www.geeksforgeeks.org/bits-manipulation-important-tactics/)_
   
-  _Study reference [main util](https://www.tutorialspoint.com/ansi_c/c_bits_manipulation.htm)_
+  _Study reference [main util](https://www.albany.edu/faculty/dsaha/teach/2017Spring_CEN360/slides/lec15.pdf)_
   
   - [x] Binare with sign (Branch main)
   
